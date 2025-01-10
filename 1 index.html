@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Parts Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+
+            overflow: visible;
+        }
+
+        .top-bar {
+            background-color: #0045a7;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav-bar a,
+        .nav-bar a {
+            text-decoration: none;
+            color: #000;
+            margin: 0 10px;
+            font-size: 20px;
+
+        }
+
+        .red {
+            text-shadow: #060a0f;
+        }
+
+        .nav-bar select {
+            margin-left: 10px;
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        .hero-section {
+            height: 100vh;
+            background-image: url('./images/car-servise-slide-1-min_d5590803-fc98-45f8-9807-70c535fc0f5c_1296x.webp');
+            background-repeat: no-repeat;
+            width: 100%;
+            object-fit: cover;
+            background-size: cover;
+        }
+
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .hero-selection {
+            background-color: #0033cc;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            background-image: url(images/bg-element-car_2048x.progressive_c4d7e32a-5105-4c3e-8d1e-80f4bb558723.webp);
+        }
+
+        .hero-selection h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero-selection p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .hero-selection button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 30px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .best-sellers {
+            text-align: center;
+            margin: 40px 20px;
+
+        }
+
+        .best-sellers h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .best-sellers p {
+            font-size: 14px;
+            color: #666;
+        }
+
+
+        h1 {
+            color: #060a0f;
+            margin: 20px 0;
+        }
+
+        . {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .cat-card {
+            height: 100%;
+        }
+
+        .cut {
+            margin-top: 20%;
+        }
+
+        .shop-now {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #1a73e8;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .shop-now:hover {
+            background: #155bb5;
+        }
+
+        .tss {
+            margin-top: 10%;
+
+        }
+
+        .footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        .good {
+            opacity: 0;
+        }
+
+        .shade {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .shade:hover,
+        .shade:focus,
+        .shade:active {
+            box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+            transform: scale(1.05);
+        }
+
+
+        .thin {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .thin:hover,
+        .thin:focus,
+        .thin:active {transform: scale(1.05);
+        }
+
+        thin:active {
+            -shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+
+            .piboxnk {
+                box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+            }
+
+            .pink:hover,
+            .pink:focus,
+            .pink:active {
+                box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+                transform: scale(1.25);
+            }
+
+            .footer {
+                background-color: #000;
+                padding: 40px 20px;
+            }
+
+            .footer-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 20px;
+            }
+
+            .footer-section {
+                flex: 1 1 calc(20% - 20px);
+                min-width: 200px;
+            }
+
+            .footer-section h4 {
+                border-bottom: 2px solid #fff;
+                padding-bottom: 5px;
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-section ul li {
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+
+            .footer-section ul li strong {
+                color: #f0a500;
+            }
+
+            .footer-section.about p {
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                margin-top: 20px;
+                border-top: 1px solid #333;
+                padding-top: 10px;
+                font-size: 50px;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar  d-flex justify-content-between">
+        <span class="phone-number">OUR PHONE NUMBER: +91 8608724931</span>
+        <div class="navbar navbar-expand-md">
+            <nav class="navbar navbar-expand-sm navbar-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="red navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ACCOUNTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">CARD</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">OUR LOCATION</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">CONTACT US</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="nav-bar">
+            <a href="#">HOME</a>
+            <a href="#">SHOP</a>
+            <a href="#">BLOG</a>
+            <a href="#">PAGES</a>
+            <a href="#">FEATURES</a>
+        </div>
+        <section>
+            <option value="usd">USD</option>
+            <option value="eur">EUR</option>
+        </section>
+
+    </div>
+    <div class="hero-section container-fluid d-flex align-items-center justify-content-center ">
+        <div class="text-center text-white">
+            <div class="dot">
+                <h1>OFFER DISCOUNT</h1>
+            </div>
+            <P class="lead">Convallis dapibus ipsum posuere ac vivamus semper praesent ligula incptos vivamus parturient
+            </P>
+            <!-- <div class="img-car">
+                <img src="https://www.iihs.org/cdn-cgi/image/width=636/api/ratings/model-year-images/3342/"
+                    alt="1st car">
+            </div> -->
+
+
+            <button class="btn btn-primary">SHOP NOW</button>
+        </div>
+    </div>
+
+    <section class="featured-products py-5">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://www.shutterstock.com/image-vector/toolbox-equipment-logo-illustration-line-260nw-1939249513.jpg"
+                            class="card-img-top" alt="Sushi">
+                        <div class="card-body">
+                            <h5 class="card-title">Car</h5>
+                            <p class="card-text">$75.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREhSf--g4GykBrgEYADGrIWGsN2OYTLHrZ1A&s"
+                            class="card-img-top" alt="Sushi">
+                        <div class="card-body">
+                            <h5 class="card-title">Lighting</h5>
+                            <p class="card-text">$45.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDeP3qX69D6ntf2EaVeoT6_D0AzVqDHa58sg&s"
+                            class="card-img-top" alt="Sushi">
+                        <div class="card-body">
+                            <h5 class="card-title">Sushi</h5>
+                            <p class="card-text">$25.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqfmRwgYVcD33VPPNjwsFfb0ZvsutGUsoP8Q&s"
+                            class="card-img-top" alt="Watches">
+                        <div class="card-body">
+                            <h5 class="card-title">Watches</h5>
+                            <p class="card-text">$120.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="row text-center mt-3">
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="card">
+                        <img src="https://jcblhandtools.com/wp-content/uploads/2024/04/Automotive-Tools.webp"
+                            width="100%" height="100%" class="tss">
+                        <div class="card-body">
+                            <h4>Custom Parts</h4>
+                            <p>Get personalized car parts for your unique needs someone.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9oTSSDJdhGCnQbliVdesx1j_OelilJjKIZ1gHdESRpGgeBYtruOe6LG8XC8W9OcFBQvo&usqp=CAU"
+                            width="100%" class="tss">
+                        <div class="card-body">
+                            <h4>Repairing</h4>
+                            <p>Expert repair services to keep your car running smoothly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw0vN4j39as6NRZ2evz2bcUrUbCWFNHRUyEQ&s"
+                            width="100%" class="tss">
+                        <div class="card-body">
+                            <h4>Maintenance</h4>
+                            <p>Regular maintenance to ensure the longevity of your car.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="container my-5">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="row text-center">
+
+            <div class="col-md-3">
+                <div class="card shade">
+                    <img src="./images/s-l225.jpg" class="card-img-top" alt="Yuwabilla flatters">
+                    <div class="card-body">
+                        <h5 class="card-title">Yuwabilla flatters</h5>
+                        <p class="card-text">$579.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 my-3 my-md-0">
+                <div class="card shade">
+                    <img src="./halo.jpeg" class="card-img-top" alt="Yuwnvallis dul">
+                    <div class="card-body">
+                        <h5 class="card-title">Yuwnvallis dul</h5>
+                        <p class="card-text">$576.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 my-3 my-md-0">
+                <div class="card shade">
+                    <img src="https://cdn.moglix.com/p/FI19JfdZ723Fe-xxlarge.jpg" class="card-img-top" alt="Yuwis">
+                    <div class="card-body">
+                        <h5 class="card-title">Yuwis</h5>
+                        <p class="card-text">$579.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 my-3 my-md-0">
+                <div class="card shade">
+                    <img src="https://demo-basel.myshopify.com/cdn/shop/products/car-prod-7_263x.progressive.jpg?v=1500974663"
+                        class="card-img-top" alt="yuwgue">
+                    <div class="card-body">
+                        <h5 class="card-title">yuwgue</h5>
+                        <p class="card-text">$579.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center mt-3">
+            <div class="col-md-3 ">
+                <div class="card shade">
+                    <img src="./ffffffff.jpeg" class="card-img-top" alt="Yuwalesuada">
+                    <div class="card-body">
+                        <h5 class="card-title">Yuwalesuada</h5>
+                        <p class="card-text">$579.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 my-3 my-md-0">
+                <div class="card shade">
+                    <img src="images/car-prod-11_ac4422d5-0c04-4507-8030-1c98b5cfa846_360x.webp" class="card-img-top"
+                        alt="yuwames">
+                    <div class="card-body">
+                        <h5 class="card-title">yuwames</h5>
+                        <p class="card-text">$579.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 my-3 my-md-0">
+                <div class="card shade">
+                    <img src="images/car-prod-14_fb913f20-6964-4da7-8b80-7ea7313e11f5_360x.webp" class="card-img-top"
+                        alt="yuwotenti">
+                    <div class="card-body">
+                        <h5 class="card-title">yuwotenti</h5>
+                        <p class="card-text">$579.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 my-3 my-md-0">
+                <div class="card shade">
+                    <img src="images/car-prod-17_515ebb6a-87cc-4b91-8548-64e62e31c583_360x.webp" class="card-img-top"
+                        alt="Yuwlilora">
+                    <div class="card-body">
+                        <h5 class="card-title">Yuwlilora</h5>
+                        <p class="card-text">$579.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-selection">
+        <img src="images/bg-element-car_2048x.progressive_c4d7e32a-5105-4c3e-8d1e-80f4bb558723.webp" alt="Car Brakes"
+            style="width: 100px;" class="good" margin-bottom: 20px;>
+        <h1>BEST - OFFER - EVER </h1>
+        <div class="nil">
+            <img src="images/baner-product-car_670x.webp" width="20%" alt="ring">
+        </div>
+        <h2>Custom Service</h2>
+        <p>Get ready to pimp your car</p>
+        <button>Add to Card</button>
+    </div>
+    <div class="best-sellers">
+        <h2>Our Bestsellers</h2>
+        <p>Suspenses tristiqe vestibulum ultrices fusce...</p>
+    </div>
+    <div class="container">
+        <div class="row text-center mt-3">
+            <div class="col-md-3 my-md-0">
+                <div class="card pink">
+                    <img src="./images/s-l225.jpg" class="card-img-top" alt="Yuwabilla flatters">
+                    <div class="card-body">
+                        <h5 class="card-title">Yuwabilla flatters</h5>
+                        <p class="card-text">$579.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 my-md-0">
+                <div class="card pink">
+                    <img src="./halo.jpeg" class="card-img-top" alt="Yuwnvallis dul">
+                    <div class="card-body">
+                        <h5 class="card-title">Yuwnvallis dul</h5>
+                        <p class="card-text">$576.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 my-md-0">
+                <div class="card pink">
+                    <img src="https://cdn.moglix.com/p/FI19JfdZ723Fe-xxlarge.jpg" class="card-img-top" alt="Yuwis">
+                    <div class="card-body">
+                        <h5 class="card-title">Yuwis</h5>
+                        <p class="card-text">$579.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 my-md-0">
+                <div class="card pink">
+                    <img src="https://demo-basel.myshopify.com/cdn/shop/products/car-prod-7_263x.progressive.jpg?v=1500974663"
+                        class="card-img-top" alt="yuwgue">
+                    <div class="card-body">
+                        <h5 class="card-title">yuwgue</h5>
+                        <p class="card-text">$579.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Node justify-content-center d-flex">
+        <h1>All-Categories</h1>
+    </div>
+    <h5 class="text-center">Explore various car parts and accessories to enhance your vehicle.</h5>
+
+    <div class="container bus">
+        <div class="row mt-3">
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="card cat-card shadow">
+                    <img src="./images/images 555.jpeg" alt="Charging System" class="card-img-top"
+                        style="object-fit: cover; height: 40vh;">
+                    <div class="card-body p-5">
+                        <h4>CHARGING SYSTEM</h4>
+                        <ul>
+                            <li>Exhaust Systems</li>
+                            <li>Headlights</li>
+                            <li>Amplifiers</li>
+                            <li>Brake Parts</li>
+                            <li>Chrome Trim</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="card cat-card shadow">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRKQIqQ7KE6VVKacbJzcS_zC1K9U4_a3cqWA&s"
+                        alt="Engine System" class="card-img-top" style="object-fit: cover; height: 40vh;">
+                    <div class="card-body p-5">
+                        <h4>ENGINE SYSTEM</h4>
+                        <ul>
+                            <li>Exhaust Systems</li>
+                            <li>Headlights</li>
+                            <li>Amplifiers</li>
+                            <li>Brake Parts</li>
+                            <li>Chrome Trim</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="card cat-card shadow">
+                    <img src="https://5.imimg.com/data5/JA/QV/MY-49365788/lithium-battery.jpg" alt="Conditioning"
+                        class="card-img-top" style="object-fit: cover; height: 40vh;">
+                    <div class="card-body p-5">
+                        <h4>CONDITIONING</h4>
+                        <ul>
+                            <li>Exhaust Systems</li>
+                            <li>Headlights</li>
+                            <li>Amplifiers</li>
+                            <li>Brake Parts</li>
+                            <li>Chrome Trim</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-4 my-md-0">
+                <div class="card cat-card shadow">
+                    <img src="https://i0.wp.com/silverbattery.in/wp-content/uploads/2022/01/BT360.jpg?fit=600%2C600&ssl=1"
+                        alt="Sensors" class="card-img-top" style="object-fit: cover; height: 40vh;">
+                    <div class="card-body p-5">
+                        <h4>SENSORS</h4>
+                        <ul>
+                            <li>Exhaust Systems</li>
+                            <li>Headlights</li>
+                            <li>Amplifiers</li>
+                            <li>Brake Parts</li>
+                            <li>Chrome Trim</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 my-md-0">
+                <div class="card cat-card shadow">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVtx9OXdKhvQX1c48Ypr2rzVDZ3fFX1wp76Q&s"
+                        width="100%" alt="Audio/Video" class="card-img-top" style="object-fit: cover; height: 40vh;">
+                    <div class="card-body p-5">
+                        <h4>AUDIO/VIDEO</h4>
+                        <ul>
+                            <li>Exhaust Systems</li>
+                            <li>Headlights</li>
+                            <li>Amplifiers</li>
+                            <li>Brake Parts</li>
+                            <li>Chrome Trim</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 my-md-0">
+                <div class="card cat-card shadow">
+                    <img src="https://images.autoguru.com.au/_next/image?url=https%3A%2F%2Fcms.anz.autoguru.com%2Fmedia%2Fdsrlolcd%2F172_in_article_the-automatic-transmission-explained.jpg&w=640&q=60"
+                        width="100%" alt="Fuel Supply" class="card-img-top" style="object-fit: cover; height: 40vh;">
+                    <div class="card-body p-5">
+                        <h4>FUEL SUPPLY</h4>
+                        <ul>
+                            <li>Exhaust Systems</li>
+                            <li>Headlights</li>
+                            <li>Amplifiers</li>
+                            <li>Brake Parts</li>
+                            <li>Chrome Trim</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shopNow justify-content-center d-flex">
+        <a href="#" class="shop-now">SHOP NOW</a>
+
+    </div>
+
+    <div>
+        <h1 class="text-dark text-center">OurCars <span class="text-primary">Magazine</span></h1>
+        <p class="text-center">Suspendisse tristique vestibulum scelerisque in suspendisse fusce...</p>
+        </header>
+    </div>
+    <div class="container">
+        <div class="row text-center mt-3">
+
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="card thin">
+                    <img src="./images/download (1).jpeg" width="100%" alt="Driving image">
+                    <div class="card-body">
+                        <h2>Venenatis veulum peus</h2>
+
+                        <p>Sociosqu scele risque aliquet penatibus pretium vesti bulum...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="card thin">
+                    <img src="https://img.freepik.com/premium-photo/car-tires-garage-background_863013-169785.jpg?w=360"
+                        width="100%" alt="Tires image">
+                    <div class="card-body">
+                        <h2>Hac fames tempor</h2>
+                        <p>Egestas mus a mus rhoncus adipiscing iaculis facilisi a...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="card thin">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-FEUZsZIBemJaiy95X6y5guvG-k1UlLp2mg&s"
+                        width="100%" alt="Flat tire help">
+                    <div class="card-body">
+                        <h2>Urna ligula inceptos</h2>
+
+                        <p>Vestibulum malesuada elit sit placerat congue viverra...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="custom-service py-5">
+        <div class="container text-center">
+            <h2>Custom Service</h2>
+            <p>Get ready to pimp your car with the best custom parts!</p>
+            <button class="btn btn-primary">Add to Cart</button>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Our Stores</h4>
+                <ul>
+                    <li>New York</li>
+                    <li>London SF</li>
+                    <li>Cockfosters BP</li>
+                    <li>Los Angeles</li>
+                    <li>Chicago</li>
+                    <li>Las Vegas</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <ul>
+                    <li>About Store</li>
+                    <li>New Collection</li>
+                    <li>Spares</li>
+                    <li>Contact Us</li>
+                    <li>Latest News</li>
+                    <li>Our Sitemap</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li>Privacy Policy</li>
+                    <li>Returns</li>
+                    <li>Terms & Conditions</li>
+                    <li>Contact Us</li>
+                    <li>Latest News</li>
+                    <li>Our Sitemap</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Footer Menu</h4>
+                <ul>
+                    <li>🅾Instagram Profile</li>
+                    <li>New Collection</li>
+                    <li>Spare Parts</li>
+                    <li>Contact Us</li>
+                    <li>Latest News</li>
+                    <li><strong>Purchase Theme</strong></li>
+                </ul>
+            </div>
+            <div class="footer-section about">
+                <h4>About the Store</h4>
+                <p>STORE - worldwide fashion store since 1978.</p>
+                <p>📍 451 Wall Street, USA, New York</p>
+                <p>📞 Phone: (064) 032-1239</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025. All Rights Reserved by Brassy Academy.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
